@@ -72,8 +72,8 @@
         var ff = f.seq[length - 1];
         var f0 = f.seq.slice(0, length - 1);
 
-        console.log(ff);
-        console.log(f0);
+        //    console.log(ff);
+        //  console.log(f0);
 
 
         if (type(ff) != 'Function')
@@ -105,11 +105,8 @@
     return msg;
   };
 
-  var z = compute($(1)(2));
+  var z = compute($(1)(2)($(4)(5))(out));
 
-  console.info('FINAL', z);
-
-  // [1,2,5]
 
   //***********************************
 }.call(this));
