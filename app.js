@@ -78,16 +78,16 @@
 
         if (type(ff) != 'Function')
         {
-          console.log('#not function');
+          //        console.log('#not function');
           return f.seq;
         }
         else
         {
-          console.log('#function');
-          console.info('function:', f0);
+          //        console.log('#function');
+          //      console.info('function:', f0);
 
           var result = ff(f0);
-          console.info('result ', result);
+          //    console.info('result ', result);
           return compute(result);
         }
       }
@@ -105,7 +105,7 @@
     return msg;
   };
 
-  var z = compute($(1)(2)($(4)(5))(out));
+  var z = compute($(1)()(3)(out));
 
 
   //***********************************
