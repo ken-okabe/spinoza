@@ -1,18 +1,13 @@
-/**
- * @license
- * Lo-Dash 2.4.1 <http://lodash.com/>
- * Copyright 2012-2013 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.5.2 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <http://lodash.com/license>
- */
 ;
 (function()
 { //***********************************
   'use strict';
-  console.log('=====spinoza=====');
+  console.log('===== spinoza =====');
 
-  var _ = require('lodash');
+  var info = function(type, info)
+  {
+    console.info(type + '->', info);
+  };
 
   var type = function(obj)
   {
@@ -21,92 +16,98 @@
       .toString
       .call(obj)
       .slice(8, -1);
-
   };
-
 
   var $ = function(a)
   {
     var i = 0;
-    var seq = [];
-    seq[i] = a;
+    var s = [];
+    s[i] = a;
 
-    var f = function(a)
+    var fs = function(a)
     {
       i++;
-      seq[i] = a;
-      console.log(seq);
-      f.seq = seq;
-      return f;
+      s[i] = a;
+      fs.s = s;
+      return fs;
     };
+    fs.s = s;
 
-    console.log(seq);
-    f.seq = seq;
-
-    return f;
+    return fs;
   };
 
-  //[ 1, 2, 3, 4, 5 ]
-
-  var compute = function(f)
+  var fseq = function(s)
   {
-    //---------
-    if (type(f) != 'Function')
+    var fs = function() {};
+    fs.s = s;
+    return fs;
+  };
+
+  var compute = function(fs)
+  {
+    //------------
+    if (type(fs) != 'Function')
     {
-      return f;
+      return fs;
     }
     else
     {
-
-      var length = f.seq.length;
-
+      var length = fs.s.length;
       var result;
+
       if (length === 1)
       {
-        return f();
+        return fs.s;
       }
-
       else
       {
-
-        var ff = f.seq[length - 1];
-        var f0 = f.seq.slice(0, length - 1);
-
-        //    console.log(ff);
-        //  console.log(f0);
-
+        var ff = fs.s[length - 1]; //the last fs
+        var f0 = fseq(fs.s.slice(0, length - 1)); //fseq the rest
 
         if (type(ff) != 'Function')
         {
-          //        console.log('#not function');
-          return f.seq;
+          return fs.s;
         }
         else
         {
-          //        console.log('#function');
-          //      console.info('function:', f0);
-
-          var result = ff(f0);
-          //    console.info('result ', result);
-          return compute(result);
+          var fs1 = ff(f0);
+          return compute(fs1);
         }
       }
-
     }
-
     //---------
   };
 
-
-
-  var out = function(msg)
+  var out = function(fs)
   {
-    console.info('@@@ OUT @@@ ', msg);
-    return msg;
+    var z = compute(fs);
+    info('world', z);
+    return z;
   };
 
-  var z = compute($(1)()(3)(out));
+  var world;
 
+  //-------------------------------
+  var plus10 = function(fs)
+  {
+    var _ = require('lodash');
+    var f = function(x)
+    {
+      return x + 10;
+    };
+    var z = _.map(fs.s, f);
+    return z;
+  };
+
+  //===========================================
+  var fs0 = $('hello')(out);
+  world = compute(fs0);
+
+  var fs1 = $(1)(plus10)(out);
+  world = compute(fs1);
+
+  var fs2 = $(1)(2)(3)(plus10)(out);
+  world = compute(fs2);
 
   //***********************************
 }.call(this));
