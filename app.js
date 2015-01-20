@@ -85,12 +85,30 @@
     return z;
   };
 
-  var world; //our physical world
+
+  if (typeof(window) === 'undefined')
+  {
+    console.log('in node/iojs');
+    global.window = global;
+  }
+  else
+  {
+    console.log('in browser');
+  }
+  Object.defineProperties(window,
+  {
+    world: //our physical world
+    {
+      set: function(fs)
+      {
+        return compute(fs); //compute fs
+      }
+    }
+  });
 
   var spinoza = {
     $: $,
     compute: compute,
-    world: world,
     out: out
 
   };
