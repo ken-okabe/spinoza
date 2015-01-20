@@ -18,10 +18,16 @@ var plus10 = function(fs)
 
 //===========================================
 
-world = $('hello')(out);
+world = $('hello')(out);　　
+//[ 'hello' ]
 
 world = $(1)(plus10)(out);
+// [ 11 ]
 
 world = $(1)(2)(3)(plus10)(out);
+// [ 11, 12, 13 ]
+
+world = $('hello');
+//　nothing happens
 
 //===========================================
