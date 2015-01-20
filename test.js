@@ -24,6 +24,9 @@ world = $('hello')(out);　　
 world = $(1)(plus10)(out);
 // [ 11 ]
 
+world = $(1)(2)(3)(out);
+// [ 1, 2, 3 ]
+
 world = $(1)(2)(3)(plus10)(out);
 // [ 11, 12, 13 ]
 
