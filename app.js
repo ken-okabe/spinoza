@@ -62,7 +62,7 @@
       else
       {
         var ff = fs.s[length - 1]; //the last fs
-        var f0 = fseq(fs.s.slice(0, length - 1)); //fseq the rest
+        var fs0 = fseq(fs.s.slice(0, length - 1)); //fseq the rest
 
         if (type(ff) != 'Function')
         {
@@ -70,7 +70,7 @@
         }
         else
         {
-          var fs1 = ff(f0);
+          var fs1 = ff(fs0);
           return compute(fs1);
         }
       }
