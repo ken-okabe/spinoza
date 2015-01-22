@@ -22,17 +22,16 @@ var delay = setTimeout(f, 2000);
 //-------------
 
 var input = (function() {
-  process.stdin.resume();
-  process.stdin.setEncoding('utf8');
-　
-  process.stdin.on('data', function(chunk) {
-    chunk.trim().split('\n').forEach(function(line) {
-  　
-      world = $(line)(out);
-    });
-  });
-　
-  process.stdin.on('end', function() {});
+  var std = process.stdin
+    .resume()
+    .setEncoding('utf8')
+    .on('data', function(chunk) {
+      chunk.trim().split('\n').forEach(function(line) {　
+        world = $(line)(out);
+      });
+    })
+    .on('end', function() {});
+
 })();
 //-----------
 
