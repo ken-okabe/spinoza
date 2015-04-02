@@ -40,7 +40,7 @@ var input = (function()
 
 //===========================================
 spinoza.world = $('hello');
-// nothing
+// no output
 spinoza.world = $('------------')(out);
 spinoza.world = $('hello')(out);
 // ['hello']
