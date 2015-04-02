@@ -70,6 +70,10 @@ spinoza.world =
   $('one')(out)
   ($('two')(out))
   ($('three')(out));
+//[ 'one' ]
+//[ 'two' ]
+//['three']
+
 
 /*
 // ( 1 (+ ( 2 (+ ( 3 ) ) ) ) )
