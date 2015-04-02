@@ -16,13 +16,7 @@ var plus10 = function(s)
   return z;
 };
 
-/*
-var f = function()
-{
-	world = $('delay hello')(out);
-};
-var delay = setTimeout(f, 2000);
-*/
+
 //-------------
 /*
 var input = (function()
@@ -74,16 +68,6 @@ spinoza.world = $($(1)(2)(3)(plus10))(out);
 
 
 /*
-
-//[ 'hello', out ]
-
-// [ 1, 2, 3, plus10, out ] =  [11, 12, 13] is out
-// [[ 1, 2, 3, plus10], out ] = [1, 2, 3, plus10] is out
-
-world = $(1)(2)(3)(plus10)(out); // [11, 12, 13]
-
-world = $( $(1)(2)(3)(plus10) )(out); // [1, 2, 3, plus10]
-
 // ( 1 (+ ( 2 (+ ( 3 ) ) ) ) )
 
 var plus2 = $(plus)(2);
