@@ -1,2 +1,2 @@
 # spinoza
-##spinoza pure functional programming language
+##tiny pure functional programming language that runs in JavaScript natively

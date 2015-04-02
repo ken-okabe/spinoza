@@ -39,36 +39,18 @@ var input = (function()
 //-----------
 
 //===========================================
+
 $('hello');
 // no computing, lazy evaluation
-spinoza.world = $('------------')(out);
+
 spinoza.world = $('hello');
 // computing, but no output
-spinoza.world = $('------------')(out);
+
 spinoza.world = $('hello')(out);
 // ['hello']
-spinoza.world = $('------------')(out);
-spinoza.world = $('hello')('world')(out);
-// [ 'hello', 'world' ]
-spinoza.world = $('------------')(out);
-spinoza.world = $('hello')(out)(out);
-// ['hello']
-// ['hello']
-spinoza.world = $('------------')(out);
-spinoza.world = $('hello')(out)('world')(out);
-// ['hello']
-// [ 'hello', 'world' ]
-spinoza.world = $('------------')(out);
-spinoza.world = $(1)(2)(3)(out);
-// [ 1, 2, 3 ]
-spinoza.world = $('------------')(out);
-spinoza.world = $(1)(2)(3)(plus10)(out);
-// [ 11, 12, 13 ]
-spinoza.world = $('------------')(out);
-spinoza.world = $($(1)(2)(3)(plus10))(out);
-// [ 1, 2, 3, [Function] ]
 
 spinoza.world = $('------------')(out);
+
 spinoza.world =
   $('one')(out)
   ($('two')(out))
@@ -76,6 +58,32 @@ spinoza.world =
 //[ 'one' ]
 //[ 'two' ]
 //['three']
+
+
+spinoza.world =
+
+  ($('=================')(out))
+  ($('hello')('world')(out))
+  // [ 'hello', 'world' ]
+  ($('------------')(out))
+  ($('hello')(out)(out))
+  // ['hello']
+  // ['hello']
+  ($('------------')(out))
+  ($('hello')(out)('world')(out))
+  // ['hello']
+  // [ 'hello', 'world' ]
+  ($('------------')(out))
+  ($(1)(2)(3)(out))
+  // [ 1, 2, 3 ]
+  ($('------------')(out))
+  ($(1)(2)(3)(plus10)(out))
+  // [ 11, 12, 13 ]
+  ($('------------')(out))
+  ($($(1)(2)(3)(plus10))(out))
+  // [ 1, 2, 3, [Function] ]
+  ($('=================')(out));
+
 
 
 /*
