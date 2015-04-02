@@ -1,6 +1,6 @@
 {
 	"name": "spinoza",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"description": "spinoza pure functional programming language",
 	"main": "spinoza.js",
 	"scripts":
