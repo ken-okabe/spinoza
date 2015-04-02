@@ -23,8 +23,6 @@
       return fs;
     };
     fs.s = s;
-
-    fs.spinoza = true;
     return fs;
   };
 
@@ -47,14 +45,15 @@
       //console.info('debug: ', s9);
       var s0 = s.slice(0, s.length - 1);
       //console.info('debug: ', s0);
-      var comp = compute(s0);
+      var ss = compute(s0);
       if (type(s9) === 'Function')
       {
-        return s9(comp);
+        return s9(ss);
       }
       else
       {
-        return s;
+        ss[ss.length] = s9;
+        return ss;
       }
     }
   };

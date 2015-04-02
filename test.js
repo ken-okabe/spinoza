@@ -7,13 +7,13 @@ var out = spinoza.out;
 
 var plus10 = function(s)
 {
-	var _ = require('lodash');
-	var f = function(x)
-	{
-		return x + 10;
-	};
-	var z = _.map(s, f);
-	return z;
+  var _ = require('lodash');
+  var f = function(x)
+  {
+    return x + 10;
+  };
+  var z = _.map(s, f);
+  return z;
 };
 
 /*
@@ -45,22 +45,34 @@ var input = (function()
 //-----------
 
 //===========================================
-
-
+spinoza.world = $('hello');
+// nothing
+spinoza.world = $('------------')(out);
 spinoza.world = $('hello')(out);
+// ['hello']
+spinoza.world = $('------------')(out);
+spinoza.world = $('hello')('world')(out);
+// [ 'hello', 'world' ]
 spinoza.world = $('------------')(out);
 spinoza.world = $('hello')(out)(out);
+// ['hello']
+// ['hello']
 spinoza.world = $('------------')(out);
-spinoza.world = $('hello')(out)('foo')(out);
+spinoza.world = $('hello')(out)('world')(out);
+// ['hello']
+// [ 'hello', 'world' ]
 spinoza.world = $('------------')(out);
 spinoza.world = $(1)(2)(3)(out);
-
+// [ 1, 2, 3 ]
 spinoza.world = $('------------')(out);
 spinoza.world = $(1)(2)(3)(plus10)(out);
-
-
+// [ 11, 12, 13 ]
 spinoza.world = $('------------')(out);
 spinoza.world = $($(1)(2)(3)(plus10))(out);
+// [ 1, 2, 3, [Function] ]
+
+
+
 /*
 
 //[ 'hello', out ]
