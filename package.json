@@ -1,29 +1,29 @@
 {
-  "name": "spinoza",
-  "version": "1.1.0",
-  "description": "spinoza pure functional programming language",
-  "main": "app.js",
-  "scripts":
-  {
-    "test": "iojs test.js"
-  },
-  "repository":
-  {
-    "type": "git",
-    "url": "https://github.com/kenokabe/spinoza"
-  },
-  "keywords": [
-    "spinoza",
-    "pure",
-    "functional",
-    "programming",
-    "language"
-  ],
-  "author": "Ken Okabe kenokabe",
-  "license": "MIT",
-  "bugs":
-  {
-    "url": "https://github.com/kenokabe/spinoza/issues"
-  },
-  "homepage": "https://github.com/kenokabe/spinoza"
+	"name": "spinoza",
+	"version": "2.1.0",
+	"description": "spinoza pure functional programming language",
+	"main": "spinoza.js",
+	"scripts":
+	{
+		"test": "node test.js"
+	},
+	"repository":
+	{
+		"type": "git",
+		"url": "https://github.com/kenokabe/spinoza"
+	},
+	"keywords": [
+		"spinoza",
+		"pure",
+		"functional",
+		"programming",
+		"language"
+	],
+	"author": "Ken Okabe kenokabe",
+	"license": "MIT",
+	"bugs":
+	{
+		"url": "https://github.com/kenokabe/spinoza/issues"
+	},
+	"homepage": "https://github.com/kenokabe/spinoza"
 }
