@@ -39,8 +39,11 @@ var input = (function()
 //-----------
 
 //===========================================
+$('hello');
+// no computing, lazy evaluation
+spinoza.world = $('------------')(out);
 spinoza.world = $('hello');
-// no output
+// computing, but no output
 spinoza.world = $('------------')(out);
 spinoza.world = $('hello')(out);
 // ['hello']

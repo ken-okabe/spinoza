@@ -28,7 +28,7 @@
 
   var compute = function(s)
   {
-    //  console.info('--------------', s);
+    //console.info('--------------', s);
     if (s.length === 1)
     {
       if (typeof(s[0].s) !== 'undefined')
