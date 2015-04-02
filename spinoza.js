@@ -28,10 +28,12 @@
 
   var compute = function(s)
   {
+    //  console.info('--------------', s);
     if (s.length === 1)
     {
       if (typeof(s[0].s) !== 'undefined')
       {
+        //console.info('!!!!', s[0].s);
         return s[0].s;
       }
       else
@@ -46,7 +48,13 @@
       var s0 = s.slice(0, s.length - 1);
       //console.info('debug: ', s0);
       var ss = compute(s0);
-      if (type(s9) === 'Function')
+
+      if (typeof(s9.s) !== 'undefined')
+      {
+        //console.info('############', s9.s);
+        return compute(s9.s);
+      }
+      else if (type(s9) === 'Function')
       {
         return s9(ss);
       }

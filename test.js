@@ -65,7 +65,11 @@ spinoza.world = $('------------')(out);
 spinoza.world = $($(1)(2)(3)(plus10))(out);
 // [ 1, 2, 3, [Function] ]
 
-
+spinoza.world = $('------------')(out);
+spinoza.world =
+  $('one')(out)
+  ($('two')(out))
+  ($('three')(out));
 
 /*
 // ( 1 (+ ( 2 (+ ( 3 ) ) ) ) )
