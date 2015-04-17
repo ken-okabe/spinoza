@@ -49,6 +49,7 @@ spinoza.world = $('hello');
 spinoza.world = $('hello')(out);
 // ['hello']
 
+/*
 spinoza.world = $('------------')(out);
 
 spinoza.world =
@@ -84,7 +85,7 @@ spinoza.world =
   // [ 1, 2, 3, [Function] ]
   ($('=================')(out));
 
-
+*/
 
 /*
 // ( 1 (+ ( 2 (+ ( 3 ) ) ) ) )

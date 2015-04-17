@@ -74,7 +74,7 @@
 
   var out = function(s)
   {
-    console.info('spinoza.world : ', s);
+    console.info('spinoza.world> ', s);
     return s;
   };
 
